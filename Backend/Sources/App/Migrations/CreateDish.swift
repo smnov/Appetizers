@@ -13,10 +13,11 @@ struct CreateDish: AsyncMigration {
             .id()
             .field("name", .string, .required)
             .field("description", .string, .required)
-            .field("price", .int16, .required)
-            .field("calories", .int16, .required)
-            .field("protein", .int16, .required)
-            .field("carbs", .string, .required)
+            .field("price", .int, .required)
+            .field("calories", .int, .required)
+            .field("protein", .int, .required)
+            .field("carbs", .int, .required)
+            .field("imageURL", .string, .required)
             .create()
     }
 

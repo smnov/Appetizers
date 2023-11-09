@@ -18,24 +18,27 @@ final class Dish: Model, Content {
     @Field(key: "description")
     var description: String
     
+    @Field(key: "imageURL")
+    var imageURL: String
+    
     @Field(key: "price")
-    var price: Int16
+    var price: Int
     
     @Field(key: "protein")
-    var protein: Int16
+    var protein: Int
     
     @Field(key: "calories")
-    var calories: Int16
+    var calories: Int
     
     @Field(key: "carbs")
-    var carbs: Int16
+    var carbs: Int
     
     @Field(key: "name")
     var name: String
     
     init() {}
     
-    init(id: UUID? = nil, description: String, name: String, price: Int16, protein: Int16, calories: Int16, carbs: Int16) {
+    init(id: UUID? = nil, description: String, name: String, price: Int, protein: Int, calories: Int, carbs: Int, imageURL: String) {
         self.id = id
         self.name = name
         self.description = description
@@ -43,6 +46,7 @@ final class Dish: Model, Content {
         self.protein = protein
         self.calories = calories
         self.carbs = carbs
+        self.imageURL = imageURL
     }
     
 }
