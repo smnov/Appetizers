@@ -38,4 +38,5 @@ struct AppetizerRemoteImage: View {
         RemoteImage(image: imageLoader.image)
             .onAppear { imageLoader.load(fromURLString: urlString)}
     }
+        
 }
