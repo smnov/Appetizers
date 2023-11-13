@@ -10,8 +10,10 @@ import SwiftUI
 struct AppetizerDetailView: View {
     
     @Binding var isShowingDetail: Bool
+    @EnvironmentObject var order: Order
     
     let appetizer: Appetizer
+    
     var body: some View {
         VStack(spacing: 20) {
             AppetizerRemoteImage(urlString: appetizer.imageURL)
@@ -29,7 +31,12 @@ struct AppetizerDetailView: View {
                 NutritionInfo(title: "Carbs", value: appetizer.carbs)
                 NutritionInfo(title: "Calories", value: appetizer.calories)
             }
-            APButton(text: "$\(appetizer.price, specifier: "%.2f") - Add to order")
+            Button {
+                order.add(appetizer)
+                isShowingDetail = false
+            } label: {
+                APButton(text: "$\(appetizer.price, specifier: "%.2f") - Add to order")
+            }
                 .padding()
         }
         .frame(width: 300, height: 525)

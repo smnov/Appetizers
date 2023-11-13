@@ -12,9 +12,6 @@ struct APButton: View {
     let text: LocalizedStringKey
     
     var body: some View {
-        Button {
-            print("text")
-        } label: {
             Text(text)
                 .font(.title3)
                 .fontWeight(.semibold)
@@ -22,6 +19,5 @@ struct APButton: View {
                 .background(Color.brandPrimary)
                 .foregroundColor(.white)
                 .cornerRadius(10)
-        }
     }
 }

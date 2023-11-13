@@ -49,6 +49,10 @@ final class NetworkManager {
         task.resume()
     }
     
+    func createAccount(completed: @escaping (Result<User, APError>) -> Void) {
+        
+    }
+    
     func downloadImage(fromURLString urlString: String, completed: @escaping (UIImage?) -> Void) {
         
         let cacheKey = NSString(string: urlString)
